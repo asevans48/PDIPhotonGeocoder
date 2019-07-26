@@ -232,7 +232,7 @@ public class PhotonPDIPlugin extends BaseStep implements StepInterface {
 
     }
 
-    if(latLong.containsKey("country")){
+    if(latLong.containsKey("country")) {
 
     }
     return outRow;
@@ -284,16 +284,41 @@ public class PhotonPDIPlugin extends BaseStep implements StepInterface {
       zipO = this.extractField(outrow, meta.getZipField(), rmi);
     }
 
+    String zipUse = "";
     if(cityO != null && streetO != null && stateO != null && zipO != null) {
       if (zipO != null && !(zipO instanceof String)) {
-        zipO = String.valueOf(zipO);
+        zipUse = String.valueOf(zipO);
       } else if (zipO == null) {
-        zipO = "";
+        zipUse = "";
       }
-      String zip = (String) zipO;
+      if(this.meta.getphotonUrl() != null && this.meta.getphotonUrl().trim().length() >0) {
+        try {
+          URI uri = new URI(meta.getphotonUrl());
+          Map<String, String> result = this.data.photonRequest(uri, streetO, cityO, stateO, zipUse);
+          outrow = this.packagePhotonRow(result, outrow, rmi);
+        }catch(Exception e){
+          if(this.isBasic()){
+            this.logBasic("Failed to Process Address Through Photon");
+            this.logBasic(e.getMessage());
+          }
+        }
+      }
     }
-    if(meta.getphotonUrl() != null && meta.getphotonUrl().trim().length() >0){
 
+    if(!wasGeocodeObtained(outrow, rmi) && this.meta.isUseMapBoxFallbackIfPresent()){
+      if(this.meta.getMapboxUrl() != null && this.meta.getMapboxUrl().trim().length() >0) {
+        try {
+          URI uri = new URI(meta.getMapboxUrl());
+          String mtoken = this.meta.getMapBoxKey();
+          Map<String, String> result = this.data.mapBoxRequest(uri, mtoken,streetO, cityO, stateO, zipUse);
+          outrow = this.packagePhotonRow(result, outrow, rmi);
+        } catch (Exception e) {
+          if (this.isBasic()) {
+            this.logBasic("Failed to Process Address Through MapBox");
+            this.logBasic(e.getMessage());
+          }
+        }
+      }
     }
     return outrow;
   }

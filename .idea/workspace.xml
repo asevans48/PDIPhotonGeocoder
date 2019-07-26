@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77707e09-2350-4749-8757-6343a4b7eb33" name="Default Changelist" comment="" />
+    <list default="true" id="77707e09-2350-4749-8757-6343a4b7eb33" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/si/PhotonPDIPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/si/PhotonPDIPlugin.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +23,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/si/PhotonPDIPlugin.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="487">
-                  <caret line="222" selection-start-line="222" selection-end-line="222" />
+                <state relative-caret-position="436">
+                  <caret line="291" column="20" lean-forward="true" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
                   <folding>
                     <element signature="e#2409#2425#0" expanded="true" />
                     <element signature="e#3305#3321#0" expanded="true" />
@@ -70,6 +72,9 @@
       <replace>Nominatim</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -91,6 +96,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -166,6 +172,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PDINominatimGeocoder" />
   </component>
   <component name="RecentsManager">
@@ -294,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/si/PhotonPDIPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="222" selection-start-line="222" selection-end-line="222" />
+        <state relative-caret-position="436">
+          <caret line="291" column="20" lean-forward="true" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
           <folding>
             <element signature="e#2409#2425#0" expanded="true" />
             <element signature="e#3305#3321#0" expanded="true" />
